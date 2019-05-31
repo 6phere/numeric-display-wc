@@ -12,11 +12,11 @@
 [![Bundlephobia][bundlephobia-badge]][bundlephobia-url]
 
 ------------------------------------------------------------------
-![Sixphere][docs/imgs/sixphere_logo.jpeg]
+![Sixphere][https://github.com/6phere/numeric-display-wc/raw/develop/docs/imgs/sixphere_logo.jpeg]
 
 Injectable custom element to display a number. It's based on [Sixphere LitElement](https://www.npmjs.com/package/@sixphere/lit-element). You can use [Sixphere DIWrapper](https://www.npmjs.com/package/@sixphere/diwrapper) library to inject a service.
 
-![Polaris Numeric Display][docs/imgs/numeric-display-wc.png]
+![Polaris Numeric Display][https://github.com/6phere/numeric-display-wc/raw/develop/docs/imgs/numeric-display-wc.png]
 
 ## Install
 ```bash
