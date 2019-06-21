@@ -1,8 +1,9 @@
 {
   "name": "@sixphere-polaris/numeric-display-wc",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "description": "Injectable web component to display a number",
   "main": "index.js",
+  "module": "index.js",
   "dependencies": {
     "@sixphere/lit-element": "^1.0.0",
     "lit-element": "^2.1.0",
