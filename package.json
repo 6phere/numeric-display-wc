@@ -1,19 +1,42 @@
 {
   "name": "@sixphere-polaris/numeric-display-wc",
-  "version": "0.8.1",
+  "version": "1.0.0",
   "description": "Injectable web component to display a number",
-  "main": "index.js",
-  "module": "index.js",
+  "main": "pkg/dist-web/index.bundled.js",
+  "module": "pkg/dist-web/index.bundled.js",
+  "esnext": "pkg/dist-web/index.bundled.js",
   "dependencies": {
-    "@sixphere/lit-element": "^1.0.0",
-    "lit-element": "^2.1.0",
+    "@sixphere/lit-element": "^1.1.1",
+    "lit-element": "^2.2.0",
     "lit-html": "^1.1.0"
   },
   "devDependencies": {
-    "@pika/web": "^0.4.2"
+    "@pika/pack": "^0.4.0",
+    "@pika/plugin-build-web": "^0.4.0",
+    "@pika/plugin-bundle-web": "^0.4.0",
+    "@pika/plugin-standard-pkg": "^0.4.0",
+    "@sixphere/diwrapper": "^1.0.3",
+    "serve": "^11.0.2"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "npm run pack:build",
+    "pack:build": "pack build",
+    "serve": "serve",
+    "serve:dev": "npm run pack:build && npm run serve"
+  },
+  "@pika/pack": {
+    "pipeline": [
+      [
+        "@pika/plugin-standard-pkg"
+      ],
+      [
+        "@pika/plugin-build-web"
+      ],
+      [
+        "@pika/plugin-bundle-web"
+      ]
+    ]
   },
   "author": "Sixphere Technologies",
   "license": "MIT",
@@ -26,10 +49,8 @@
   },
   "homepage": "https://github.com/6phere/numeric-display-wc#readme",
   "keywords": [
-    "web",
-    "component",
-    "custom",
-    "element",
+    "web component",
+    "custom element",
     "sixphere",
     "diwrapper",
     "dependency",

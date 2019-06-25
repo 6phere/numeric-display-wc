@@ -24,6 +24,26 @@ Injectable custom element to display a number. It's based on [Sixphere LitElemen
 npm install '@sixphere-polaris/numeric-display-wc' --save
 ```
 
+### Install dependencies
+```bash
+npm install '@sixphere/lit-element' --save
+npm install 'lit-element' --save
+npm install 'lit-html' --save
+```
+
+This package uses `@pika/web` to install the dependencies. So, add the following lines to your `package.json` file:
+```javascript
+"@pika/web": {
+    "webDependencies": [
+      "@sixphere/lit-element",
+      "lit-element",
+      "lit-html"
+    ]
+}
+```
+
+In order to install this dependencies you can follow the [install steps](https://github.com/pikapkg/web#quickstart) from `@pika/web` docs.
+
 
 ## HTML API
 
@@ -41,7 +61,7 @@ npm install '@sixphere-polaris/numeric-display-wc' --save
 
 ### Register as a custom element
 ```javascript
-import {PolarisNumericDisplay} from '@sixphere-polaris/numeric-display-wc'
+import {PolarisNumericDisplay} from '/web_modules/@sixphere-polaris/wcs/numeric-display.js'
 
 CustomElements.define(PolarisNumericDisplay.is, PolarisNumericDisplay)
 ```

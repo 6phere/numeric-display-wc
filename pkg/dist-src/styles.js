@@ -1,5 +1,4 @@
-import { css } from '@sixphere/lit-element'
-
+import { css } from '@sixphere/lit-element';
 let mainStyle = css`
 :host {
     --blue: #2196f3;
@@ -86,6 +85,5 @@ h4 {
     color: var(--danger);
     border-color: var(--danger);
 }
-`
-
-export { mainStyle }
+`;
+export { mainStyle };

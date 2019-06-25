@@ -1,5 +1,4 @@
-import { SixphereLitElement, html, css } from '/web_modules/@sixphere/lit-element.js'
-import { render } from '/web_modules/lit-html.js'
+import { SixphereLitElement, html } from '@sixphere/lit-element'
 
 import { mainStyle } from './styles.js'
 
@@ -87,7 +86,7 @@ class PolarisNumericDisplay extends SixphereLitElement {
             await this.getData()
 
         this.status = this.calculateStatus(this.value)
-        render(this.renderCircle(), this.$refs.wrapper)
+        await this.requestUpdate()
     }
 
     /**
@@ -171,10 +170,9 @@ class PolarisNumericDisplay extends SixphereLitElement {
     }
 
     render() {
-        let circle = this.renderCircle()
         return html`
             <div ref="wrapper" class="polaris-numeric-display__wrapper">
-                ${circle}
+                ${this.renderCircle()}
             </div>
         `
     }

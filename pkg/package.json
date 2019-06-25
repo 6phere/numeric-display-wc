@@ -1,0 +1,45 @@
+{
+  "name": "@sixphere-polaris/numeric-display-wc",
+  "description": "Injectable web component to display a number",
+  "version": "1.0.0",
+  "license": "MIT",
+  "files": [
+    "dist-*/",
+    "bin/"
+  ],
+  "pika": true,
+  "sideEffects": false,
+  "keywords": [
+    "web component",
+    "custom element",
+    "sixphere",
+    "diwrapper",
+    "dependency",
+    "injection",
+    "lit-element",
+    "litelement"
+  ],
+  "homepage": "https://github.com/6phere/numeric-display-wc#readme",
+  "bugs": {
+    "url": "https://github.com/6phere/numeric-display-wc/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/6phere/numeric-display-wc.git"
+  },
+  "dependencies": {
+    "@sixphere/lit-element": "^1.1.1",
+    "lit-element": "^2.2.0",
+    "lit-html": "^1.1.0"
+  },
+  "devDependencies": {
+    "@pika/pack": "^0.4.0",
+    "@pika/plugin-build-web": "^0.4.0",
+    "@pika/plugin-bundle-web": "^0.4.0",
+    "@pika/plugin-standard-pkg": "^0.4.0",
+    "@sixphere/diwrapper": "^1.0.3",
+    "serve": "^11.0.2"
+  },
+  "esnext": "dist-src/index.js",
+  "module": "dist-web/index.js"
+}
