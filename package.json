@@ -1,6 +1,6 @@
 {
   "name": "@sixphere-polaris/numeric-display-wc",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Injectable web component to display a number",
   "main": "pkg/dist-web/index.bundled.js",
   "module": "pkg/dist-web/index.bundled.js",

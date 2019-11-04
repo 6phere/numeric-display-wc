@@ -43,7 +43,7 @@ npm install '@sixphere-polaris/numeric-display-wc' --save
 ```javascript
 import {PolarisNumericDisplay} from '@sixphere-polaris/numeric-display-wc'
 
-CustomElements.define(PolarisNumericDisplay.is, PolarisNumericDisplay)
+customElements.define(PolarisNumericDisplay.is, PolarisNumericDisplay)
 ```
 
 ### Inject a service using DIWrapper

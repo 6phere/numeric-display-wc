@@ -41,24 +41,24 @@ class PolarisNumericDisplay extends SixphereLitElement {
             /**
              * Title to be displayed by the component
              */
-            title: { type: String }, 
+            title: { type: String },
             /**
              * Statuses based on Bootstrap colors
              * @see https://getbootstrap.com/docs/4.3/utilities/colors/
              */
-            _status: { type: String , reflect: true, attribute: 'status'}, 
+            _status: { type: String, reflect: true, attribute: 'status' },
             /**
              * Low data boundary
              */
-            min: { type: Number},
+            min: { type: Number },
             /**
              * High data boundary
              */
-            max: { type: Number},
+            max: { type: Number },
             /**
              * Fixed value
              */
-            value: { type: Number},
+            value: { type: Number },
         }
     }
 
@@ -79,7 +79,7 @@ class PolarisNumericDisplay extends SixphereLitElement {
      * UpdateComplete event handler.
      */
     async onUpdateComplete() {
-        if (!this.hasService && !this.value)
+        if (!this.hasService && this.value === null)
             throw new Error(`You must define an attribute value or inject a service for the component [ ${PolarisNumericDisplay.name} ] before init`)
 
         if (this.hasService)
@@ -102,10 +102,10 @@ class PolarisNumericDisplay extends SixphereLitElement {
     }
 
     calculateStatus(data) {
-        if(this.status)
+        if (this.status)
             return this.status
 
-        if(this.min <= data && data <= this.max)
+        if (this.min <= data && data <= this.max)
             return STATUSES.SUCCESS
 
         return STATUSES.DANGER
@@ -114,7 +114,7 @@ class PolarisNumericDisplay extends SixphereLitElement {
 
     /* Computed properties */
 
-    get noDataSymbol(){
+    get noDataSymbol() {
         return "·"
     }
 
@@ -142,7 +142,7 @@ class PolarisNumericDisplay extends SixphereLitElement {
     /* RENDERING */
 
     static get styles() {
-        return [ 
+        return [
             mainStyle
         ]
     }
@@ -158,12 +158,12 @@ class PolarisNumericDisplay extends SixphereLitElement {
     }
 
     renderCircle() {
-        let title = this.title ? this.renterTitle() : "" ;
+        let title = this.title ? this.renterTitle() : "";
         let status = this.statusClass()
 
         return html`
             <div ref="circle" class="poalris-numeric-display__circle ${status}">
-                <div ref="display" class="poalris-numeric-display__display ${status}">${this.value || this.noDataSymbol}</div>
+                <div ref="display" class="poalris-numeric-display__display ${status}">${this.value !== null ? this.value : this.noDataSymbol}</div>
             </div>
             ${title}
         `

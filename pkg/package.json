@@ -1,7 +1,7 @@
 {
   "name": "@sixphere-polaris/numeric-display-wc",
   "description": "Injectable web component to display a number",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "files": [
     "dist-*/",

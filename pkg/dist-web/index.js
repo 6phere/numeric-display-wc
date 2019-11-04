@@ -186,7 +186,7 @@ class PolarisNumericDisplay extends SixphereLitElement {
     var _this = this;
 
     return _asyncToGenerator(function* () {
-      if (!_this.hasService && !_this.value) throw new Error("You must define an attribute value or inject a service for the component [ ".concat(PolarisNumericDisplay.name, " ] before init"));
+      if (!_this.hasService && _this.value === null) throw new Error("You must define an attribute value or inject a service for the component [ ".concat(PolarisNumericDisplay.name, " ] before init"));
       if (_this.hasService) yield _this.getData();
       _this.status = _this.calculateStatus(_this.value);
       yield _this.requestUpdate();
@@ -259,7 +259,7 @@ class PolarisNumericDisplay extends SixphereLitElement {
   renderCircle() {
     let title = this.title ? this.renterTitle() : "";
     let status = this.statusClass();
-    return html(_templateObject2(), status, status, this.value || this.noDataSymbol, title);
+    return html(_templateObject2(), status, status, this.value !== null ? this.value : this.noDataSymbol, title);
   }
 
   render() {
